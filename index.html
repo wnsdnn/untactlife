@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/common.css">
+    <title>main</title>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <ul>
+                <li>
+                    <img src="./img/logo.png" alt="logo">
+                </li>
+            </ul>
+        </div>
+        <div class="menu">
+            <ul class="main_menu">
+                <li>
+                    <a href="#">About Us</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">언택트라이프 소개</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">이벤트</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">이벤트 리스트</a></li>
+                        <li><a href="#">상세보기</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">관리자</a>
+                    <ul class="sub_menu">
+                        <li><a href="#">회원관리</a></li>
+                        <li><a href="#">이벤트관리</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="login">
+            <ul>
+                <li class="JoinBtn"><a href="#">회원가입</a></li>
+                <li class="LoginBtn"><a href="#">로그인</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="container">
+        <nav class="nav">
+            <ul class="slide">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </nav>
+        <div class="content">
+            <div class="new_event">
+                <h2>new_event</h2>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="popular_event">
+                <h2>popular_event</h2>
+                <ul>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="comments">
+                <h2>comments</h2>
+                <ul>
+                    <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                    <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                    <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> 
+    <footer class="footer">
+        <div class="copyright">
+            <p>Copyright(C) 2020. 언택트라이프. All rights reserved.</p><br>
+            <span>회원수: 명</span><span>이벤트수: 개</span><span>이벤트 신청자 수: 명</span>
+        </div>
+        <div class="sns">
+            <a href="#"><img src="./img/facebook.png" alt="sns1"></a>
+            <a href="#"><img src="./img/twitter.png" alt="sns2"></a>
+            <a href="#"><img src="./img/you-tube.png" alt="sns3"></a>
+        </div>
+    </footer>
+    
+    <section class="popup display-none" id="join">
+        <div>
+            <h3>회원가입</h3>
+            <form>
+                <input type="text" id="id" placeholder="아이디를 입력하세요">
+                <input type="email" id="email" placeholder="이메일을 입력하세요">
+                <input type="password" id="pw" class="pw" placeholder="비밀번호를 입력하세요">
+                <input type="password" id="pw2" class="pw" placeholder="비밀번호 확인">
+                <button>전송</button>
+            </form>
+            <div class="join_close">
+                <span><a href="#" class="color">[취소]</a></span>
+            </div>
+        </div>
+    </section>
+
+    <section class="popup display-none" id="login">
+        <div>
+            <h3>로그인</h3>
+            <form>
+                <input type="text" id="id" placeholder="아이디를 입력하세요">
+                <input type="password" id="pw" placeholder="비밀번호를 입력하세요">
+                <button>전송</button>
+            </form>
+            <p class="join_go">회원가입하기</p>
+            <div class="login_close">
+                <span><a href="#" class="color">[취소]</a></span>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>
