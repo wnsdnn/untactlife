@@ -2,7 +2,10 @@ let delBtn =  document.querySelectorAll(".del")
 
 for(let i=0; i<delBtn.length; i++){
     delBtn[i].addEventListener("click", function(){
-        confirm("삭제하시겠습니까?");
+        if(confirm("삭제하시겠습니까?")){
+            this.parentNode.parentNode.remove();
+        }
+        // confirm("삭제하시겠습니까?");
     })
 }
 

@@ -97,6 +97,12 @@ const loginForm = document.querySelector("#login form");
 joinForm.addEventListener("submit", event => {
     event.preventDefault();
 
+    if(joinForm.children[0].value === "") {
+        alert("이름을 입력해주세요");
+
+        return false;
+    };
+
     const regExp = new RegExp(/[A-Za-z0-9]*@[A-Za-z]*\.[a-zA-Z]{2,3}/);
     if(joinForm.children[1].value.match(regExp) === null) {
         alert("이메일 형식이 일치하지 않습니다");
@@ -121,6 +127,12 @@ joinForm.addEventListener("submit", event => {
         return false;
     };
 
+    if(joinForm.children[2].value !== joinForm.children[3].value){
+        alert("비밀번호가 다릅니다.")
+
+        return false;
+    }
+
     alert("회원가입 되었습니다");
     joinForm.reset();
 });
@@ -140,3 +152,5 @@ joingo.addEventListener("click", function(){
     joinpopup.classList.toggle("display-none");
     loginpopup.classList.toggle("display-none");
 })
+
+

@@ -12,21 +12,21 @@ img{vertical-align: middle;}
 .logo img{width: 65px; height: 65px;}
 
 /* header-menu */
-.header>.menu{width: 450px; line-height: 70px; text-align: center;}
-.main_menu>li{float: left; width: 150px; margin-top: 10px;}
-.sub_menu>li{height: 0; overflow: hidden; transition: .3s; font-size: 14px;}
+.main_menu{display: flex; width: 800px; line-height: 70px; text-align: center;}
+.main_menu>li{width: 200px; height: 70px; margin-top: 10px;}
+.sub_menu>li{background: #fff; height: 0; transition: .3s; opacity: 0;}
+
+.main_menu>li:hover .sub_menu>li{height: 70px; transition: .3s; opacity: 1;}
+
+.mypage{position: relative;}
+.mypage>.sub_menu2{position: absolute; left: 100%; top: 0;}
+.mypage>.sub_menu2>li{width: 200px; height: 70px; background: #fff; color: #000; display: none;}
+.mypage:hover .sub_menu2>li{display: block; transition: .3s;}
+
 .main_menu>li:hover{background: #fff; color: #000;}
 .sub_menu>li:hover{background: #000; color: #fff;}
-.main_menu>li:hover .sub_menu>li{height: 65px;}
+.sub_menu2>li:hover{background: #000; color: #fff; transition: .3s;}
 
-
-/* header-login */
-.header>.login{margin-top: 10px;}
-.header>.login li{float: left; cursor: pointer;}
-.header>.login li::after{content: "|";}
-.header>.login li:last-child::after{content: "";}
-.header>.login a:nth-child(1){margin-right: 5px;}
-.header>.login li:nth-child(2){margin-left: 5px;}
 
 /* container */
 .container{width: 1200px; height: 800px; margin: 0px auto; padding-top: 80px;}
