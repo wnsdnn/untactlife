@@ -1,0 +1,62 @@
+*{margin: 0; padding: 0;}
+body{width: 1200px; margin: 0 auto;}
+ul, li{list-style: none;}
+a{text-decoration: none; color: inherit;}
+img{vertical-align: middle;}
+
+/* header */
+.header{width: 1200px; height: 90px; display: flex; justify-content: space-around; line-height: 70px; position: fixed; left: 0; right: 0; bottom: 0; top: 0; margin: 0 auto; background: #000; color: #fff; font-size: 17px;}
+
+/* header-logo */
+.logo{margin-top: 5px;} 
+.logo img{width: 65px; height: 65px;}
+
+/* header-menu */
+.header>.menu{width: 450px; line-height: 70px; text-align: center;}
+.main_menu>li{float: left; width: 150px; margin-top: 10px;}
+.sub_menu>li{height: 0; overflow: hidden; transition: .3s; font-size: 14px;}
+.main_menu>li:hover{background: #fff; color: #000;}
+.sub_menu>li:hover{background: #000; color: #fff;}
+.main_menu>li:hover .sub_menu>li{height: 65px;}
+
+
+/* header-login */
+.header>.login{margin-top: 10px;}
+.header>.login li{float: left; cursor: pointer;}
+.header>.login li::after{content: "|";}
+.header>.login li:last-child::after{content: "";}
+.header>.login a:nth-child(1){margin-right: 5px;}
+.header>.login li:nth-child(2){margin-left: 5px;}
+
+/* container */
+.container{width: 1200px; height: 800px; margin: 0px auto; padding-top: 100px;}
+.container .lists{width: 93%; line-height: 35px; margin: 0px auto; margin-top: 40px; font-size: 18px;}
+.container li{display: flex; justify-content: space-between; text-align: center; margin: 15px 0px; border-bottom: 1px solid #000; padding-bottom: 10px;}
+.container li:last-child{border: none;}
+.container .list>div{display: flex; justify-content: space-around;}
+.container .list p{width: 200px;}
+.container .lists span{width: 100px; font-size: 13px; color: rgba(0, 0, 0, 0.6);}
+
+/* footer */
+.footer{width: 100%; height: 100px; display: flex; justify-content: space-around; border-top: 1px solid #000;}
+.footer>div{margin-top: 15px;}
+.footer span{font-size: 13px; color: #666; margin-right: 5px;}
+.footer span::after{content: "|"; margin-left: 5px;}
+.footer span:last-child:after{content: "";}
+
+/* popup-join */
+#dialog{position: fixed; top: 0; bottom: 0; left: 0; right: 0; background: rgba(0, 0, 0, 0.7);}
+#dialog>div{width: 400px; background: #fff; margin: 0 auto; margin-top: 200px;}
+#dialog h3{padding: 40px; font-size: 25px;}
+#dialog form{display: flex; flex-direction: column; padding: 0 40px;}
+#dialog #name, #dialog #pw, #dialog #email{width:95%; height: 30px; margin: 15px auto; border: none; border-bottom: 1px solid #000; font-size: 17px;}
+#dialog #name:focus, #dialog #pw:focus, #dialog #email:focus{outline: none;}
+#dialog form button{width: 100%; height: 40px; border-radius: 15px; background: blue; color: #fff; margin-top: 20px;}
+#dialog .dialog_close{margin-top: 50px; padding: 20px; text-align: right;}
+.dialog_close .color{color: red;}
+
+
+/* 기타 */
+.display-none{
+    display: none;
+}

@@ -3,15 +3,15 @@ const login = document.querySelector(".LoginBtn a")
 const joinclose = document.querySelector(".join_close span")
 const loginclose = document.querySelector(".login_close span")
 const joingo = document.querySelector(".join_go")
-let joinpopup = document.getElementById('join');
-let loginpopup = document.getElementById('login');
+const joinpopup = document.getElementById('join');
+const loginpopup = document.getElementById('login');
 
-let stopbtn = document.querySelector(".StopBth");
-let gobtn = document.querySelector(".GoBth");
-let leftbtn = document.querySelector(".LeftBtn");
-let rightbtn = document.querySelector(".RightBtn");
+const stopbtn = document.querySelector(".StopBth");
+const gobtn = document.querySelector(".GoBth");
+const leftbtn = document.querySelector(".LeftBtn");
+const rightbtn = document.querySelector(".RightBtn");
 
-let slides = document.querySelector(".slide")
+const slides = document.querySelector(".slide");
 
 
 window.onload = function(){
@@ -21,45 +21,61 @@ window.onload = function(){
 
 let count = 0;
 
+function play(){
+    count++;
+    if(count < 0){
+        count = 2;
+    }
+    if(count > 2){
+        count = 0;
+    }
+    slides.style.marginLeft = -1200*count+"px";
+    slides.style.transition = 1+"s";
+};
+
+let stopCheck = false;
+
 const slide = function(){
     let set = setInterval(play, 3000);
 
-    function play(){
-        count++;
-        if(count < 0){
-            count = 2;
-        }
-        if(count > 2){
-            count = 0;
-        }
-        slides.style.marginLeft = -1200*count+"px";
-        slides.style.transition = 1+"s";
-    };
-    
     stopbtn.addEventListener("click", function(){
         clearInterval(set);
+
+        stopCheck = true;
     });
     gobtn.addEventListener("click", function(){
-        if(!set){
-            set = setInterval(play, 3000);
-        }
+        set = setInterval(play, 3000);
+
+        stopCheck = false;
     });
 
     leftbtn.addEventListener("click", function(){
+        clearInterval(set);
+
         count--;
         if(count < 0){
             count = 2;
         }
         slides.style.marginLeft = -1200*count+"px";
         slides.style.transition = 1+"s";
+
+        if(!stopCheck) {
+            setTimeout(() => set = setInterval(play, 3000));
+        };
     });
     rightbtn.addEventListener("click", function(){ 
+        clearInterval(set);
+
         count++;
         if(count > 2){
             count = 0;
         }
         slides.style.marginLeft = -1200*count+"px";
         slides.style.transition = 1+"s";
+
+        if(!stopCheck) {
+            setTimeout(() => set = setInterval(play, 3000));
+        };
     });
 };
 
@@ -76,23 +92,51 @@ login.addEventListener("click", function(){
     loginpopup.classList.toggle("display-none")
 });
 
+const joinForm = document.querySelector("#join form");
+const loginForm = document.querySelector("#login form");
+joinForm.addEventListener("submit", event => {
+    event.preventDefault();
+
+    const regExp = new RegExp(/[A-Za-z0-9]*@[A-Za-z]*\.[a-zA-Z]{2,3}/);
+    if(joinForm.children[1].value.match(regExp) === null) {
+        alert("이메일 형식이 일치하지 않습니다");
+
+        return false;
+    };
+
+    const regExp2 = new RegExp(/[~!@#$%^&*()_+|<>?:{}]/g);
+    if(joinForm.children[2].value.match(regExp2)) {
+        alert("비밀번호에 특수문자는 입력할 수 없습니다");
+
+        return false;
+    };
+    if(joinForm.children[2].value.match(new RegExp(/[A-Z]/g)) === null) {
+        alert("비밀번호에 대문자를 한개 이상 포함해주세요");
+
+        return false;
+    };
+    if(joinForm.children[2].value.match(new RegExp(/[0-9]/g)) === null) {
+        alert("비밀번호에 숫자를 한개 이상 포함해주세요");
+
+        return false;
+    };
+
+    alert("회원가입 되었습니다");
+    joinForm.reset();
+});
+
 joinclose.addEventListener("click", function(){
     joinpopup.classList.toggle("display-none");
 
-    document.querySelector("#join #id").value = "";
-    document.querySelector("#join #email").value = "";
-    document.querySelector("#join #pw").value = "";
-    document.querySelector("#join #pw2").value = "";
-})
+    joinForm.reset();
+});
 loginclose.addEventListener("click", function(){
-    loginpopup.classList.toggle("display-none")
+    loginpopup.classList.toggle("display-none");
     
-    document.querySelector("#login #id").value = "";
-    document.querySelector("#login #pw").value = "";
+    loginForm.reset();
 })
 
 joingo.addEventListener("click", function(){
     joinpopup.classList.toggle("display-none");
     loginpopup.classList.toggle("display-none");
-
 })

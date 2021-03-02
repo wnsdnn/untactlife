@@ -10,8 +10,10 @@
     <header class="header">
         <div class="logo">
             <ul>
-                <li> 
-                    <img src="./img/logo.png" alt="logo">
+                <li>
+                    <a href="./index.html">
+                        <img src="./img/logo.png" alt="logo">
+                    </a>
                 </li>
             </ul>
         </div>
@@ -20,21 +22,20 @@
                 <li>
                     <a href="#">About Us</a>
                     <ul class="sub_menu">
-                        <li><a href="#">언택트라이프 소개</a></li>
+                        <li><a href="./About us.html">언택트라이프 소개</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">이벤트</a>
                     <ul class="sub_menu">
-                        <li><a href="#">이벤트 리스트</a></li>
-                        <li><a href="#">상세보기</a></li>
+                        <li><a href="./eventlist.html">이벤트 리스트 상세보기</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">관리자</a>
                     <ul class="sub_menu">
-                        <li><a href="#">회원관리</a></li>
-                        <li><a href="#">이벤트관리</a></li>
+                        <li><a href="./member_management.html">회원관리</a></li>
+                        <li><a href="./event_management.html">이벤트관리 </a></li>
                     </ul>
                 </li>
             </ul>
@@ -62,19 +63,19 @@
             <div class="new_event">
                 <h2>new_event</h2>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
                 </ul>
             </div>
             <div class="popular_event">
                 <h2>popular_event</h2>
                 <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#"></a></li>
                 </ul>
             </div>
             <div class="comments">
@@ -98,13 +99,13 @@
             <a href="#"><img src="./img/you-tube.png" alt="sns3"></a>
         </div>
     </footer>
-    
+
     <section class="popup display-none" id="join">
         <div>
             <h3>회원가입</h3>
             <form>
-                <input type="text" id="id" placeholder="아이디를 입력하세요">
-                <input type="email" id="email" placeholder="이메일을 입력하세요">
+                <input type="text" class="name" placeholder="이름을 입력하세요">
+                <input type="email" class="id" placeholder="아이디(email)을 입력하세요">
                 <input type="password" id="pw" class="pw" placeholder="비밀번호를 입력하세요">
                 <input type="password" id="pw2" class="pw" placeholder="비밀번호 확인">
                 <button>전송</button>
@@ -119,8 +120,8 @@
         <div>
             <h3>로그인</h3>
             <form>
-                <input type="text" id="id" placeholder="아이디를 입력하세요">
-                <input type="password" id="pw" placeholder="비밀번호를 입력하세요">
+                <input type="text" class="id" placeholder="아이디(email)를 입력하세요">
+                <input type="password" class="pw" placeholder="비밀번호를 입력하세요">
                 <button>전송</button>
             </form>
             <p class="join_go">회원가입하기</p>

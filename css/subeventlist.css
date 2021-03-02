@@ -1,0 +1,62 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{width: 1200px; margin: 0 auto;}
+ul, li{list-style: none;}
+a{text-decoration: none; color: inherit;}
+img{vertical-align: middle;}
+
+
+/* header */
+.header{width: 1200px; height: 90px; display: flex; justify-content: space-around; line-height: 70px; position: fixed; left: 0; right: 0; bottom: 0; top: 0; margin: 0 auto; background: #000; color: #fff; font-size: 17px;}
+
+/* header-logo */
+.logo{margin-top: 5px;}
+.logo img{width: 65px; height: 65px;}
+
+/* header-menu */
+.header>.menu{width: 450px; line-height: 70px; text-align: center;}
+.main_menu>li{float: left; width: 150px; margin-top: 10px;}
+.sub_menu>li{height: 0; overflow: hidden; transition: .3s; font-size: 14px;}
+.main_menu>li:hover{background: #fff; color: #000;}
+.sub_menu>li:hover{background: #000; color: #fff;}
+.main_menu>li:hover .sub_menu>li{height: 65px;}
+
+
+/* header-login */
+.header>.login{margin-top: 10px;}
+.header>.login li{float: left; cursor: pointer;}
+.header>.login li::after{content: "|";}
+.header>.login li:last-child::after{content: "";}
+.header>.login a:nth-child(1){margin-right: 5px;}
+.header>.login li:nth-child(2){margin-left: 5px;}
+
+/* content */
+.content{width: 1200px; margin: 120px auto;}
+.content video{width: 100%; height: 500px; outline: none; z-index: 9;}
+
+.content>p{padding: 10px 0px;}
+
+.content .commemts{margin: 10px 0px;}
+
+.participantslist li{padding: 5px 20px;}
+.commentlist li{padding: 5px 20px;}
+
+.content legend{padding: 5px 7px; margin: 5px 10px; background: #000; color: #fff; border-radius: 20px; line-height: 20px;}  
+.content form div{display: flex; justify-content: space-around; padding: 10px; margin-bottom: 10px;}
+.content textarea{width: calc(100% - 10px); height: 100px; margin: 0 auto; resize: none; margin: 0px 5px; font-size: 20px; padding: 7px;}
+
+.content button{outline: none; cursor: pointer; width: 70px; height: 30px; float: right; margin: 5px;  color: #fff;}
+.content .btn{border: 1px solid gray; border-radius: 15px; background: gray;}
+.content button img{width: 20px; height: 20px; margin-right: 15px;}
+
+.good{border: 1px solid blue; border-radius: 25px; background: blue;}
+.bad{border: 1px solid red; border-radius: 25px; background: red;}
+.participation{border: 1px solid #000; border-radius: 25px; background: #000;}
+
+/* .content */
+
+/* footer */
+.footer{width: 100%; height: 100px; display: flex; justify-content: space-around; border-top: 1px solid #000;}
+.footer>div{margin-top: 15px;}
+.footer span{font-size: 13px; color: #666; margin-right: 5px;}
+.footer span::after{content: "|"; margin-left: 5px;}
+.footer span:last-child:after{content: "";}
